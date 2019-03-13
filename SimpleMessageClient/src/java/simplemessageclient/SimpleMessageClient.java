@@ -13,6 +13,7 @@ import javax.jms.MessageProducer;
 import javax.jms.Queue; 
 import javax.jms.Session; 
 import javax.jms.TextMessage; 
+import java.util.Scanner;
 
 
 public class SimpleMessageClient { 
@@ -28,11 +29,12 @@ try {
 Connection connection = connectionFactory.createConnection(); 
 Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE); 
 MessageProducer messageProducer = session.createProducer(queue); 
-
+Scanner scan= new Scanner(System.in);
 TextMessage message = session.createTextMessage(); 
 
-for (int i = 0; i < 20; i++) { 
-message.setText("This is message " + (i + 1)); 
+for (int i = 0; i < 20; i++) {
+String msg= scan.nextLine();  
+message.setText(msg); 
 System.out.println("Sending message: " + 
 message.getText()); 
 messageProducer.send(message); 
