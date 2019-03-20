@@ -7,4 +7,4 @@ TASK:
  Получатель сортирует сообщения в порядке возрастания и таким
 образом записывает их в текстовый файл.
 
-Clien app send > 10 messages in Queue. MDB recievs they, sort ascending and write they to txt file.
+Client app send > 10 messages in Queue. MDB recievs they, sort ascending and write they to txt file.
